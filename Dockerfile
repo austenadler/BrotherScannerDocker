@@ -3,7 +3,8 @@ FROM ubuntu:16.04
 RUN apt-get -y update && apt-get -y upgrade && apt-get -y clean
 RUN apt-get -y install sane sane-utils ghostscript netpbm x11-common- wget graphicsmagick curl ssh sshpass && apt-get -y clean
 
-ARG BRSCAN_VERSION=brscan4-0.4.5.1 BRSCAN_SKEY_VERSION=brscan-skey-0.2.4-1
+ARG BRSCAN_VERSION=brscan4-0.4.8-1
+ARG BRSCAN_SKEY_VERSION=brscan-skey-0.2.4-1
 
 RUN cd /tmp && \
     wget "http://download.brother.com/welcome/dlf006645/${BRSCAN_VERSION}.amd64.deb" && \
