@@ -6,14 +6,14 @@ RUN apt-get -y install sane sane-utils ghostscript netpbm x11-common- wget graph
 ARG BRSCAN_VERSION=brscan4-0.4.5.1 BRSCAN_SKEY_VERSION=brscan-skey-0.2.4-1
 
 RUN cd /tmp && \
-    wget http://download.brother.com/welcome/dlf006645/${BRSCAN_VERSION}.amd64.deb && \
-    dpkg -i /tmp/${BRSCAN_VERSION}.amd64.deb && \
-    rm /tmp/${BRSCAN_VERSION}.amd64.deb
+    wget "http://download.brother.com/welcome/dlf006645/${BRSCAN_VERSION}.amd64.deb" && \
+    dpkg -i "/tmp/${BRSCAN_VERSION}.amd64.deb" && \
+    rm "/tmp/${BRSCAN_VERSION}.amd64.deb"
 
 RUN cd /tmp && \
-    wget http://download.brother.com/welcome/dlf006652/${BRSCAN_SKEY_VERSION}.amd64.deb && \
-    dpkg -i /tmp/${BRSCAN_SKEY_VERSION}.amd64.deb && \
-    rm /tmp/${BRSCAN_SKEY_VERSION}.amd64.deb
+    wget "http://download.brother.com/welcome/dlf006652/${BRSCAN_SKEY_VERSION}.amd64.deb" && \
+    dpkg -i "/tmp/${BRSCAN_SKEY_VERSION}.amd64.deb" && \
+    rm "/tmp/${BRSCAN_SKEY_VERSION}.amd64.deb"
 
 ADD files/runScanner.sh /opt/brother/runScanner.sh
 
